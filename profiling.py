@@ -172,6 +172,11 @@ def list_all_users():
         print("No users registered.")
         return
     
+    # other option
+    # if len(user_database) == 0:
+    #     print("No users registered.")
+    #     return
+    
     # iterate through user_database and print username and email
     print("Listing all registered users:\n")
     for user in user_database:
