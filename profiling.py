@@ -12,11 +12,14 @@ def register_user():
     while True:
         # take input for username
         username = input("Enter a username: ") 
+        
+        # check for exit command
         if username.lower() == 'exit':
             print("Registration cancelled.")
             return
-        
+
         # if empty, ask again
+        # not is simply username == "" or not existing
         while not username:
             print("Username cannot be empty. Please try again.")
             username = input("Enter a username: ")
@@ -28,7 +31,7 @@ def register_user():
         # since user_database is a list of dicts then check each by key
         # with variable user representing each dict, check if username key matches input
         # use any() instead of for, faster and cleaner
-        # checks only any match not iterates all and does not return list
+        # checks only any match instead of iterates all
         if any(user['username'] == username for user in user_database):
             print("Username already exists. Please choose a different username.")
         else:
